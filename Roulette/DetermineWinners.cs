@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Roulette
 {
-    class TheCreator
+    class DetermineWinners
     {
 
         public (string, string)[] bins = new (string, string)[38]

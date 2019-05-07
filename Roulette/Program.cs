@@ -14,7 +14,7 @@ namespace Roulette
         static void Main(string[] args)
         {
             Random SpinTheWheel = new Random();
-            TheCreator RollTheDice = new TheCreator();
+            DetermineWinners RollTheDice = new DetermineWinners();
 
             RollTheDice.LetsGamble(SpinTheWheel);
         }
