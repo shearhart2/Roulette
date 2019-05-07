@@ -45,7 +45,7 @@ namespace Roulette
                     theNumber = Convert.ToInt32(winningSet.Item1);
 
                     Console.WriteLine("You win if you bet on: \n");
-                    ActivateWinners();
+                    ShowAllWinninBets();
                 }
 
                 while(true)
@@ -72,27 +72,27 @@ namespace Roulette
 
         }
 
-        public void ActivateWinners()
+        public void ShowAllWinninBets()
         {
-            SingleNumber();
-            Even_Odd();
-            Red_Black();
-            High_Low();
-            Dozens();
-            Console.WriteLine($"Column {Columns()}\n");
-            Streets();
-            GroupOf6(Columns());
-            Split(Columns());
-            Corner(Columns());
+            SingleNumberWinner();
+            Even_OddWinner();
+            Red_BlackWinner();
+            High_LowWinner();
+            DozensWinner();
+            Console.WriteLine($"Column {ColumnsWinner()}\n");
+            StreetsWinner();
+            GroupOf6Winner(ColumnsWinner());
+            SplitWinner(ColumnsWinner());
+            CornerWinner(ColumnsWinner());
 
         }
 
-        public void SingleNumber()
+        public void SingleNumberWinner()
         {
             Console.WriteLine($"The number {theNumber}\n");
         }
 
-        public void Even_Odd()
+        public void Even_OddWinner()
         {
             string verdict;
 
@@ -108,12 +108,12 @@ namespace Roulette
             Console.WriteLine($"{verdict}\n");
         }
 
-        public void Red_Black()
+        public void Red_BlackWinner()
         {
             Console.WriteLine($"The color {winningSet.Item2}\n");
         }
 
-        public void High_Low()
+        public void High_LowWinner()
         {
             string verdict;
 
@@ -128,7 +128,7 @@ namespace Roulette
 
             Console.WriteLine($"{verdict}\n");
         }
-        public void Dozens()
+        public void DozensWinner()
         {
             string verdict;
 
@@ -147,7 +147,7 @@ namespace Roulette
 
             Console.WriteLine($"{verdict}\n");
         }
-        public int Columns()
+        public int ColumnsWinner()
         {
             int verdict;
             
@@ -166,7 +166,7 @@ namespace Roulette
 
             return verdict;
         }
-        public void Streets()
+        public void StreetsWinner()
         {
 
             double street = Math.Ceiling(theNumber/3.0);
@@ -174,7 +174,7 @@ namespace Roulette
             Console.WriteLine($"Street {street}\n");
             
         }
-        public void GroupOf6(int columnsReturn)
+        public void GroupOf6Winner(int columnsReturn)
         {
             string groupIncludes;
 
@@ -210,7 +210,7 @@ namespace Roulette
             Console.WriteLine($"The group of 6 numbers: {groupIncludes}\n");
             
         }
-        public void Split(int columnsReturn)
+        public void SplitWinner(int columnsReturn)
         {
             string splitIncludes;
 
@@ -271,7 +271,7 @@ namespace Roulette
             Console.WriteLine($"The splits between {theNumber} and: {splitIncludes}\n");
         }
 
-        public void Corner(int columnsReturn)
+        public void CornerWinner(int columnsReturn)
         {
             string cornerIncludes;
 
